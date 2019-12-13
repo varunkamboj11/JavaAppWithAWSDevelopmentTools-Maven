@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: ./my-app.war
+    destination: /opt/apache-tomcat-8.5.49/webapps
+hooks:
+  ApplicationStop:
+    - location: stop_server.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: start_server.sh
+      timeout: 300
+      runas: root
