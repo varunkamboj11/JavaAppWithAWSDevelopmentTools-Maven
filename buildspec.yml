@@ -1,21 +1,13 @@
-version: 0.2
+ 
+version: 0.1
 
 phases:
-  install:
-    runtime-versions:
-      java: openjdk8
   build:
     commands:
-      - echo Build started on `date`
-      - mvn test 
-  post_build:
-    commands:
       - echo Build completed on `date`
-      - mvn package
+      - mvn clean install
+       
+
 artifacts:
   files:
-    - target/my-app.war
-    - appspec.yml
-    - scripts/start_server.sh
-    - scripts/stop_server.sh
-  discard-paths: yes
+    - '**/*'
