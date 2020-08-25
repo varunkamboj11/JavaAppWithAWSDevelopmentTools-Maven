@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: ./my-app.war
-    destination: /opt/apache-tomcat-8.5.51/webapps
+    destination: /usr/local/apache-tomcat-9.0.37/webapps
 hooks:
   ApplicationStop:
     - location: stop_server.sh
